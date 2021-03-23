@@ -2,10 +2,7 @@ import com.soywiz.korge.Korge
 import com.soywiz.korge.view.*
 import com.soywiz.korim.color.Colors
 import com.soywiz.korma.geom.degrees
-import org.liamjd.korge.experiments.WrapAlignment
-import org.liamjd.korge.experiments.addTooltip
-import org.liamjd.korge.experiments.textArea
-import org.liamjd.korge.experiments.window
+import org.liamjd.korge.experiments.*
 
 suspend fun main() = Korge(width = 1024, height = 768, bgcolor = Colors["#2b2b2b"]) {
 
@@ -44,6 +41,15 @@ suspend fun main() = Korge(width = 1024, height = 768, bgcolor = Colors["#2b2b2b
 		}
 		listY += 20f
 	}
-	addChild(tooltipContainer)
 
+	// slider - WIP
+	val sliderLabel = text("Slider is VERY sensitive and broken").xy(600.0,200.0)
+	val slider = slider(100.0, 20.0) {
+		alignTopToBottomOf(sliderLabel,20.0)
+		alignRightToRightOf(tooltipLabel)
+	}
+
+
+	// adding the tooltipContainer as the very last child in an attempt to make it the top-most element on the page
+	addChild(tooltipContainer)
 }
