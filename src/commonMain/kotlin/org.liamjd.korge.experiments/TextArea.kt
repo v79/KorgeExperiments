@@ -41,7 +41,7 @@ open class TextArea(
 	color: RGBA = Colors.WHITE, font: Resourceable<out Font> = DefaultTtfFont,
 	alignment: TextAlignment = TextAlignment.TOP_LEFT,
 	wrapWidth: Double,
-	renderer: TextRenderer<String>,
+	renderer: TextRenderer<String> = TextAreaRenderer(wrapWidth,wrapAlignment = WrapAlignment.LEFT),
 	autoScaling: Boolean = true
 ) : Text(text, textSize, color, font, alignment, renderer, autoScaling) {
 	init {

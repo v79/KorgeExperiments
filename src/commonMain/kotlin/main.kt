@@ -22,7 +22,7 @@ suspend fun main() = Korge(width = 1024, height = 768, bgcolor = Colors["#2b2b2b
 
 	// windows
 	val windowLabel = text("Window").xy(10.0,300.0)
-	val windowContents = Text(text = "Window contents", color = Colors.BLACK, textSize = 14.0)
+	val windowContents = TextArea(text = "Drag the title bar to move this window around. Press the small white square to close the window.", color = Colors.BLACK, textSize = 14.0, wrapWidth = 180.0)
 	val windowTest = window(200.0,200.0,Colors.PALEGREEN,"Window Title",contents =  windowContents).xy(10,360)
 
 	val modalLabel = text("Modal window").xy(windowTest.scaledWidth + 50.0,300.0)
@@ -48,6 +48,12 @@ suspend fun main() = Korge(width = 1024, height = 768, bgcolor = Colors["#2b2b2b
 		alignTopToBottomOf(sliderLabel,20.0)
 		alignRightToRightOf(tooltipLabel)
 	}
+
+	val editableTextLabel = text("Editable text control - not yet written").xy(600.0, 300.0)
+
+	val radioButtonControls = text("Radio button control - not yet written").xy(600.0,400.0)
+
+	val tableLabel = text("A table layout is a stretch goal").xy(600.0,500.0)
 
 
 	// adding the tooltipContainer as the very last child in an attempt to make it the top-most element on the page
